@@ -1,0 +1,67 @@
+\documentclass[unicode,12pt]{beamer}
+
+\usepackage{luatexja}
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+
+\usetheme{metropolis}
+
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{
+  basicstyle=\small\ttfamily,
+  identifierstyle=\small,
+  ndkeywordstyle=\small,
+  tabsize=4,
+  frame={shadowbox},
+  frameround={ffff},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  numbersep=5pt,
+  numberstyle=\scriptsize,
+  stepnumber=1,
+  lineskip=-0.5ex
+}
+\renewcommand{\lstlistingname}{ソースコード} % キャプション名の変更
+
+\usepackage{hyperref}
+\usepackage{here}
+
+\title{スライドサンプル}
+\author{OSSS B4 広瀬智之}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}[plain]{目次}
+  \tableofcontents
+\end{frame}
+
+\section{セクション1}
+\begin{frame}[plain]{Hoge}
+  セクション1の内容
+  セクション1の内容
+  セクション1の内容
+  セクション1の内容
+  セクション1の内容
+  セクション1の内容
+\end{frame}
+
+\section{セクション2}
+\begin{frame}[fragile]{コード}
+\begin{lstlisting}[language=c,caption=サンプルコード,label=code:sample]
+#include <stdio.h>
+
+int main(void)
+{
+    printf("hello, %s\n", "world!");
+    return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+\end{document}
