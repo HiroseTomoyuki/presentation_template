@@ -24,5 +24,5 @@ continue: LATEXMKFLAG += -pvc
 continue: all
 
 clean:
-> rm -f *.bbl *.blg *.aux *.log *.dvi *.fls *.fdb_latexmk *.ltjruby *.out *.synctex.gz *.nav *.snm *.toc *.vrb
+> rm -f *.bbl *.blg *.aux *.log *.dvi *.fls *.fdb_latexmk *.ltjruby *.out *.synctex.gz *.nav *.snm *.toc *.vrb *.bcf *.run.xml
 

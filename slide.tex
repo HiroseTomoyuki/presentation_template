@@ -5,6 +5,12 @@
 
 \usetheme{metropolis}
 
+\usepackage[backend=biber,style=ieee]{biblatex}
+\addbibresource{slide.bib}
+\setbeamertemplate{bibliography item}[text]
+
+\usepackage{url}
+
 \usepackage{graphicx}
 \usepackage{listings}
 \lstset{
@@ -23,7 +29,10 @@
   lineskip=-0.5ex
 }
 \usepackage{caption}
+
 \captionsetup[lstlisting]{font=scriptsize}
+\captionsetup[figure]{font=scriptsize}
+
 \renewcommand{\lstlistingname}{ソースコード} % キャプション名の変更
 
 \usepackage{hyperref}
@@ -31,23 +40,23 @@
 
 \usepackage{here}
 
-\title{スライドサンプル}
-\author{OSSS B4 広瀬智之}
+\title{サンプルスライド}
+\author{情報太郎}
 \date{\today}
 
 \begin{document}
 
-\begin{frame}[plain]
+\begin{frame}
   \titlepage
 \end{frame}
 
-\begin{frame}[plain]{目次}
+\begin{frame}{目次}
   \tableofcontents
 \end{frame}
 
 \section{普通の文章}
 
-\begin{frame}[plain]{普通の文章は普通に書けばいい}
+\begin{frame}{普通の文章は普通に書けばいい}
 これは普通の文章です。
 \end{frame}
 
@@ -67,7 +76,7 @@ int main(void)
 
 \section{二段組}
 
-\begin{frame}[plain]{二段組したいときは\texttt{columns}}
+\begin{frame}{二段組したいときは\texttt{columns}}
   \begin{columns}[t]
     \begin{column}{0.5\textwidth}
       \begin{itemize}
@@ -90,7 +99,10 @@ int main(void)
 \begin{frame}[fragile]{二段組でもコードを書くときは\texttt{fragile}}
   \begin{columns}[t]
     \begin{column}{0.4\textwidth}
-      こっちにはコードの解説を載せればいい
+      こっちにはコードの解説を載せればいい\\
+      bibしたいときは\texttt{textcite}
+      \textcite{lourencco2018structured}\\
+      \textcite{lourencco2016unveiling}
     \end{column}
     \begin{column}{0.6\textwidth}
       \begin{lstlisting}[language=c++,caption=C++のサンプルコード,label=code:cpp]
@@ -103,6 +115,11 @@ int main() {
       \end{lstlisting}
     \end{column}
   \end{columns}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+  \scriptsize
+  \printbibliography
 \end{frame}
 
 \end{document}
